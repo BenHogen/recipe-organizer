@@ -1,0 +1,29 @@
+
+.box-input{
+    border: 2px solid $color-grey-dark;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: block;
+    padding: 1rem;
+    font-size: 1.7rem;
+    margin-top: .2rem;
+    width: 100%;
+    // background-color: $color-grey-light;
+    box-shadow: 0;
+    &:focus{
+        border-color: $color-primary;
+        border-width: 2px;
+        outline-width: 0;
+        
+    }
+
+    &::placeholder{
+        font-size: 1.7rem;
+        // padding-left: 2rem;
+    }
+
+    &__lg{
+        height: 4rem;
+        width: 40vw
+    }
+}

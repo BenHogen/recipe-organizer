@@ -1,0 +1,32 @@
+
+.section-book-box{
+    height: 95vh
+
+}
+
+.section-top-header{
+    display: flex;
+    justify-content: center; 
+}
+
+.search-header{
+    display: flex;
+    justify-content: center;
+}
+
+.plus-button{
+    margin-left: 10px;
+    color: $color-primary;
+    // transition: all .3s;
+    font-size: 4.5rem !important;
+    &:hover{
+        color: darken($color-primary,5%);
+    }
+
+    &:active{
+        transform: translateY(.1rem);
+    }
+
+}
+
+

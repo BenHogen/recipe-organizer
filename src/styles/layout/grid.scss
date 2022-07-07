@@ -1,0 +1,20 @@
+.grid{
+    display: flex;
+    // flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box-1-of-2{
+    width: 50rem;
+}
+
+.box-1-of-3{
+    width: 26rem;
+}
+
+.thin-card-grid{
+    padding: 5rem 0 5rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
