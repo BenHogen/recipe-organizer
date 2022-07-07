@@ -1,0 +1,59 @@
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(
+      to right,
+      rgb($color-primary,0.5), 
+      rgb($color-primary-dark, 0.5)), 
+      url(../../assets/images/lily-banse--YHSwy6uqvk-unsplash.jpg);
+    background-size: cover;
+    background-position: top;
+    /* clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); */
+  
+    &__text-box{
+      position: absolute;
+      top: 30%;
+      left: 50%; 
+      transform: translate(-50%,-50%);
+    }
+
+    &__cards-box{
+      position: absolute;
+      top: 65%;
+      left: 50%; 
+      transform: translate(-50%,-50%);
+      width: 60vw
+    }
+  
+  }
+  
+  // .header__text-box{
+   
+  // }
+  
+  
+  .header-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+  
+    &--main{
+      display: block;
+      font-size: 6rem;
+      font-weight: 400;
+      /* letter-spacing: */
+      animation-name: moveInLeft;
+      animation-duration: 1.1s;
+      animation-timing-function: ease-out;
+    }
+  
+   
+    &--secondary{
+      display: block;
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+    
+      animation: moveInRight 1s ease-out;
+    } 
+  }

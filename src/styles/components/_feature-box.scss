@@ -1,0 +1,29 @@
+.feature-box{
+    background-color: rgba($color-white, .75);
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
+    transition: transform .3s;
+    padding: 3rem;
+
+    &__icon{
+        margin-bottom: 2rem;
+        color: $color-primary;
+    }
+
+    &:hover{
+        transform: translateY(-1.15rem) scale(1.03);
+        
+    }
+    &:active{
+        transform: translateY(0) scale(1);
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+      } 
+    
+}
+
+
