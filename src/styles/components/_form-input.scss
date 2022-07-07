@@ -1,0 +1,36 @@
+.form-input{
+    margin: 2rem;
+    position: relative;
+    transition: all .2s ease-in-out;
+    
+
+    &__label{
+        font-size: 2rem;
+        
+    }
+
+    &__box{
+        border: 2px solid $color-grey-dark;
+        box-sizing: border-box;
+        border-radius: 10px;
+        display: block;
+        padding: 1rem;
+        font-size: 1.7rem;
+        margin-top: .2rem;
+        // background-color: $color-grey-light;
+        box-shadow: 0;
+    }
+
+    &:focus{
+        border-color: $color-primary;
+        border-width: 2px;
+        outline-width: 0;
+        
+    }
+
+    &::placeholder{
+        font-size: 1.7rem;
+
+        // padding-left: 2rem;
+    }
+}

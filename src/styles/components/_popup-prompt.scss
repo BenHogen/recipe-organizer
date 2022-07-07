@@ -1,0 +1,34 @@
+
+.close{display: none}
+
+.popup{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.25);
+
+    &__box{
+        position:relative;
+        width: 100%;
+        height: 100%;
+        animation: moveInBottom ease-out .5s;
+    }
+
+    &__content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        width: 50rem;
+        min-height: 10rem;
+        overflow: hidden;
+        padding: 2rem;
+    }
+}
+
+
