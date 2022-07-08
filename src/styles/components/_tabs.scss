@@ -1,6 +1,7 @@
 .tab-list {
     position: relative;
     padding-left: 0;
+    margin-left: 2rem
   }
 
   
@@ -15,12 +16,10 @@
     clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
     background-color: $color-primary;
     color: $color-white;
-    // z-index: 0;
-    // border-radius: 40% 40% 0 0; 
     transition: all .15s ease-in-out;
 
     &:hover {
-        background-color: darken($color-primary, 20%);
+        color: darken($color-white, 10%);
     }
 
     &--active{
@@ -30,5 +29,14 @@
     }
 }
 
+.plus-test{
+    display: inline-block;
+    list-style: none;
+    width: 3rem;
+    height: 3rem;
+    // position: relative;
+    margin-bottom:-5rem;
+
+}
 
 

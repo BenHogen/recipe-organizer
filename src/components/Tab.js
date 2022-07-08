@@ -2,7 +2,9 @@ import { useState } from "react";
 import { useRef } from "react";
 import clsx from "clsx";
 
-function Tab({ title, activeTab, setter }) {
+const activeClass = "tab-item--active";
+
+function Tab({ title, activeTab, color, titleSetter, colorSetter }) {
   const [edit, setEdit] = useState(false);
   const [tabTitle, setTabTitle] = useState(title);
   const ref = useRef(null);
@@ -34,13 +36,15 @@ function Tab({ title, activeTab, setter }) {
 
   return (
     <li
+      style={{ backgroundColor: color }}
       className={clsx("tab-item", {
-        ["tab-item--active"]: title === activeTab,
+        [activeClass]: title === activeTab,
       })}
       onClick={(e) => {
         switch (e.detail) {
           case 1:
-            setter(title);
+            titleSetter(title);
+            colorSetter(color);
             break;
           case 2:
             setEdit(true);
@@ -60,6 +64,7 @@ function Tab({ title, activeTab, setter }) {
           escapeInputEntry(e);
         }
       }}
+      // autoFocus={true}
     >
       {tabTitleGen()}
     </li>

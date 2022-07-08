@@ -14,19 +14,6 @@
     justify-content: center;
 }
 
-.plus-button{
-    margin-left: 10px;
-    color: $color-primary;
-    // transition: all .3s;
-    font-size: 4.5rem !important;
-    &:hover{
-        color: darken($color-primary,5%);
-    }
 
-    &:active{
-        transform: translateY(.1rem);
-    }
-
-}
 
 

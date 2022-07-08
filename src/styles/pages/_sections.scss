@@ -1,5 +1,7 @@
-.section-recipe-list{
-    width: 90vw;
-    height: 90vh;
+.section-list{
+    width: 100rem;
+    height: 85vh;
     background-color: $color-grey-light;
+    border-top: 10px solid $color-primary-dark;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
 }
