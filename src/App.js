@@ -3,6 +3,7 @@ import "./styles/main.scss";
 import HomeHeader from "./pages/home/HomeHeader";
 import About from "./pages/home/About";
 import Books from "./pages/books/Books";
+import Sections from "./pages/sections/Sections";
 import Route from "./utils/Router";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Books />
       </Route>
       <Route path="/book/section">
-        <div>here we go!</div>
+        <Sections />
       </Route>
       <Route path="/groceries">
         <div>Here is a grocery list.</div>
