@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import Search from "../../components/Search";
 import FormInput from "../../components/FormInput";
 import colorGenorator from "../../utils/colorGenerator";
@@ -160,7 +161,7 @@ const addBook = (data, setter, title, description) => {
 };
 
 function Books() {
-  const [userBooks, setUserBooks] = useState(testData);
+  const cookBooks = useSelector((state) => state.recipieBooks);
   const [bookCollection, setBookCollection] = useState({});
   const [searchValue, setSearchValue] = useState("");
   const [open, setOpen] = useState(false);
@@ -171,18 +172,18 @@ function Books() {
     if (searchValue.length > 0) {
       const bookOptions = {};
 
-      for (let id in userBooks) {
+      for (let id in cookBooks) {
         if (
-          userBooks[id].title.toUpperCase().includes(searchValue.toUpperCase())
+          cookBooks[id].title.toUpperCase().includes(searchValue.toUpperCase())
         ) {
-          bookOptions[id] = userBooks[id];
+          bookOptions[id] = cookBooks[id];
         }
       }
       setBookCollection(bookOptions);
     } else {
-      setBookCollection(userBooks);
+      setBookCollection(cookBooks);
     }
-  }, [searchValue, userBooks]);
+  }, [searchValue, cookBooks]);
 
   return (
     <div className="section-about">
@@ -213,8 +214,9 @@ function Books() {
             onSubmit={(event) => {
               event.preventDefault();
               addBook(
-                userBooks,
-                setUserBooks,
+                cookBooks,
+                // setcookBooks,
+                () => {},
                 newBookTitle,
                 newBookDescription
               );
