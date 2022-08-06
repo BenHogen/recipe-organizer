@@ -33,7 +33,7 @@ function About() {
               as the backend language with fastAPI as the backend API framework
               and Postgres as the database.
             </p>
-            <a href="#" className="btn-clear">
+            <a href="https://github.com/BenHogen/recipe-organizer" className="btn-clear">
               Git Repo &rarr;
             </a>
           </div>

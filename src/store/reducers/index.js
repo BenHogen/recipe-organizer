@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import recipieBooksReducer from "./recipieBooksReducer";
+import main from "./main";
 import booksReducer from "./booksReducer";
 import sectionsReducer from "./sectionsReducer";
 
 export default combineReducers({
-  recipieBooks: recipieBooksReducer,
+  main: main,
   booksReducer: booksReducer,
   sectionsReducer: sectionsReducer,
 });

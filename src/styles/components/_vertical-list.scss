@@ -1,0 +1,19 @@
+.vertical-list {
+  position: fixed;
+  padding-top: 3rem;
+
+  &__item {
+    display: inline-block;
+    list-style: none;
+    position: relative;
+    width: 101%;
+    text-align: center;
+    height: 2.9rem;
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      background-color: darken($color-grey-light, 10%);
+      font-size: 1.7rem;
+    }
+  }
+}

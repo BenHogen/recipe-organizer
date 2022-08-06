@@ -4,22 +4,25 @@ import clsx from "clsx";
 
 const activeClass = "tab-item--active";
 
-function Tab({ title, activeTab, color, titleSetter, colorSetter }) {
-  const [edit, setEdit] = useState(false);
+function Tab({ id, title, active, edit, setEdit, color, setActive, setColor , dispatchAction}) {
   const [tabTitle, setTabTitle] = useState(title);
   const ref = useRef(null);
+  
 
   const escapeInputEntry = (e) => {
     if (e.target.value.length > 0) {
       setTabTitle(e.target.value);
-      setEdit(false);
+      setEdit("");
+      setColor(color);
+      setActive(id)
+      dispatchAction(e.target.value)
     } else {
       ref.current.focus();
     }
   };
 
   const tabTitleGen = () => {
-    if (edit) {
+    if (edit === id) {
       return (
         <input
           ref={ref}
@@ -34,20 +37,21 @@ function Tab({ title, activeTab, color, titleSetter, colorSetter }) {
     }
   };
 
+
   return (
     <li
       style={{ backgroundColor: color }}
       className={clsx("tab-item", {
-        [activeClass]: title === activeTab,
+        [activeClass]: id === active,
       })}
       onClick={(e) => {
         switch (e.detail) {
           case 1:
-            titleSetter(title);
-            colorSetter(color);
+            setActive(id);
+            setColor(color);
             break;
           case 2:
-            setEdit(true);
+            setEdit(id);
             break;
           case 3:
             console.log("triple click");

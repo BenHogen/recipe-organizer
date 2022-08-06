@@ -17,7 +17,44 @@ export function changeRoute(href) {
   };
 }
 
+export const useURLSearch = () => {
+  // Listens to parameters changing in the url search bar
+  const [search, setSearch] = useState(window.location.search);
+  const listenToPopstate = () => {
+    const winSearch = window.location.search;
+    setSearch(winSearch);
+  };
+
+  useEffect(() => {
+    window.addEventListener("popstate", listenToPopstate);
+    return () => {
+      // removes listener when destroyed
+      window.removeEventListener("popstate", listenToPopstate);
+    };
+  }, []);
+  return search;
+};
+
+export const getAllUrlParams = (urlSearch = window.location.search) => {
+  // returns object of all url params
+  const urls = {};
+  const search = new URLSearchParams(urlSearch);
+  for (let param of search.keys()) {
+    urls[param] = search.get(param);
+  }
+  return urls;
+};
+
+export const addUrlParam = (label, value) => {
+  const url = new URL(window.location);
+  url.searchParams.set(label, value);
+  window.history.pushState({}, "", url);
+  const navEvent = new PopStateEvent("popstate");
+  window.dispatchEvent(navEvent);
+};
+
 const Router = ({ path, children }) => {
+  // Used for changing the page when clicked.
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
