@@ -10,10 +10,11 @@
     text-align: center;
     height: 2.9rem;
     transition: all 0.15s ease-in-out;
+    user-select: none;
 
     &:hover {
       background-color: darken($color-grey-light, 10%);
-      font-size: 1.7rem;
+      // font-size: 1.7rem;
     }
   }
 }

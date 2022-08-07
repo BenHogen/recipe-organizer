@@ -6,6 +6,7 @@ import Tab from "../../components/Tab";
 import ListItem from "../../components/ListItem";
 import Recipie from "./Recipie";
 import { addUrlParam, getAllUrlParams } from "../../utils/Router";
+import RecipieList from "./RecipieList";
 
 import {
   mainSectionAddAction,
@@ -111,34 +112,40 @@ function Sections() {
     );
   };
 
-  const generateRecipies = (recipies) => {
-    return (
-      <ul className="vertical-list">
-        {recipies.map((item, i) => {
-          let styles = {};
-          if (item.id === activeRecipie) {
-            styles["backgroundColor"] = color;
-            styles["color"] = "White";
-          }
+  // const generateRecipies = (recipies) => {
+  //   return (
+  //     <ul className="vertical-list">
+  //       {recipies.map((item, i) => {
+  //         let styles = {};
+  //         if (item.id === activeRecipie) {
+  //           styles["backgroundColor"] = color;
+  //           styles["color"] = "White";
+  //         }
 
-          return (
-            <ListItem
-              className="vertical-list__item"
-              style={{
-                ...styles,
-              }}
-              onClick={() => {
-                setActiveRecipie(item.id);
-                addUrlParam("recipie", item.id);
-              }}
-            >
-              {item.name}
-            </ListItem>
-          );
-        })}
-      </ul>
-    );
-  };
+  //         return (
+  //           <ListItem
+  //             className="vertical-list__item"
+  //             style={{
+  //               ...styles,
+  //             }}
+  //             onClick={(e) => {
+  //               switch (e.detail) {
+  //                 case 1:
+  //                   setActiveRecipie(item.id);
+  //                   addUrlParam("recipie", item.id);
+  //                   break;
+  //                 case 2:
+
+  //               }
+  //             }}
+  //           >
+  //             {item.name}
+  //           </ListItem>
+  //         );
+  //       })}
+  //     </ul>
+  //   );
+  // };
 
   return (
     <div>
@@ -164,9 +171,15 @@ function Sections() {
               className="section-recipies"
               style={{ borderRight: `3.5px solid ${color}` }}
             >
-              {generateRecipies(recipies)}
+              {/* {generateRecipies(recipies)} */}
+              <RecipieList
+                list={recipies}
+                active={activeRecipie}
+                setActive={(value) => setActiveRecipie(value)}
+                color={color}
+              />
             </div>
-            <Recipie description={"test"} />
+            <Recipie recipieID={activeRecipie} />
           </div>
         </div>
       </div>
